@@ -22,7 +22,7 @@ namespace Exercise.ProcessHandlers
         {
             try
             {
-                var input = new List<WindsorExercise.Field>();
+                var input = new List<Field>();
                 _read.ReadInputFile(inFileName, ref input);
                 var output = _algorithm.ProcessInput(input);
                 if (output.Count == 0) return false;

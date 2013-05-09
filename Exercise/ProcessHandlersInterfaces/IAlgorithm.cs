@@ -4,6 +4,6 @@ namespace Exercise.ProcessHandlersInterfaces
 {
     public interface IAlgorithm
     {
-        List<string> ProcessInput(List<WindsorExercise.Field> fields);
+        List<string> ProcessInput(List<Field> fields);
     }
 }

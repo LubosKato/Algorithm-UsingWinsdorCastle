@@ -20,7 +20,7 @@ namespace ExerciseTest
         [Test(Description = "Testing input with empty file")]
         public void TestEmptyFile()
         {
-            var field = new List<WindsorExercise.Field>();
+            var field = new List<Field>();
             IReadInput readInput = new ReadInput();
             bool passed = readInput.ReadInputFile(_setupTool.InputFileEmpty, ref field);
             Assert.IsTrue(passed);
@@ -32,7 +32,7 @@ namespace ExerciseTest
         [ExpectedException(typeof(FormatException))]
         public void TestWithInvalidData()
         {
-            var field = new List<WindsorExercise.Field>();
+            var field = new List<Field>();
             IReadInput readInput = new ReadInput();
             readInput.ReadInputFile(_setupTool.InputFileInValidData, ref field);
         }
@@ -40,7 +40,7 @@ namespace ExerciseTest
         [Test(Description = "Testing valid data")]
         public void TestWithValidData()
         {
-            var field = new List<WindsorExercise.Field>();
+            var field = new List<Field>();
             IReadInput readInput = new ReadInput();
             bool passed = readInput.ReadInputFile(_setupTool.InputFileValid, ref field);
             Assert.IsTrue(passed);

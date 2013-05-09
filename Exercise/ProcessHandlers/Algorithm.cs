@@ -6,7 +6,7 @@ namespace Exercise.ProcessHandlers
 {
     public class Algorithm : IAlgorithm
     {
-        public List<string> ProcessInput(List<WindsorExercise.Field> fields)
+        public List<string> ProcessInput(List<Field> fields)
         {
             var result = new Dictionary<string, string>();
             if (fields != null)
@@ -28,7 +28,7 @@ namespace Exercise.ProcessHandlers
             return result.Select(line => line.Key + "  " + line.Value).ToList();
         }
 
-        private void Recursion(string entryPoint, List<string> entryPoints, List<WindsorExercise.Field> fields, List<string> dependencies)
+        private void Recursion(string entryPoint, List<string> entryPoints, List<Field> fields, List<string> dependencies)
         {
             if (entryPoints.Contains(entryPoint))
             {
@@ -56,6 +56,6 @@ namespace Exercise.ProcessHandlers
                         Recursion(dependecy, entryPoints, fields, dependencies);
                 }
             }
-        } 
+        }
     }
 }

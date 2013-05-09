@@ -4,6 +4,6 @@ namespace Exercise.ProcessHandlersInterfaces
 {
     public interface IReadInput
     {
-        bool ReadInputFile(string inFileName, ref List<WindsorExercise.Field> fields);
+        bool ReadInputFile(string inFileName, ref List<Field> fields);
     }
 }

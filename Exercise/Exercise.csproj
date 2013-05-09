@@ -53,6 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Field.cs" />
+    <Compile Include="ProcessHandlers\BenchmarkingAlgorithmDecorator.cs" />
     <Compile Include="ProcessHandlers\DependencySorter.cs" />
     <Compile Include="Helper\CommandLineHelper.cs" />
     <Compile Include="Helper\Constants.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="ProcessHandlersInterfaces\IReadInput.cs" />
     <Compile Include="ProcessHandlersInterfaces\IWriteOutput.cs" />
     <Compile Include="ProcessHandlersInterfaces\IDependencySorter.cs" />
+    <Compile Include="ProcessHandlers\AlgorithmNew.cs" />
     <Compile Include="ProcessHandlers\ReadInput.cs" />
     <Compile Include="ProcessHandlers\WriteOutput.cs" />
     <Compile Include="Program.cs" />

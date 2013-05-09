@@ -8,7 +8,7 @@ namespace Exercise.ProcessHandlers
 {
     public class ReadInput : IReadInput
     {
-        public bool ReadInputFile(string inFileName, ref List<WindsorExercise.Field> fields)
+        public bool ReadInputFile(string inFileName, ref List<Field> fields)
         {
             try
             {
@@ -26,7 +26,7 @@ namespace Exercise.ProcessHandlers
                             if (newLine != string.Empty)
                             {
                                 //populate name
-                                var field = new WindsorExercise.Field { Name = newLine.Substring(0, 1) };
+                                var field = new Field { Name = newLine.Substring(0, 1) };
                                 tempFields.Add(field.Name.ToUpper());
                                 var dependencies = newLine.Substring(1).Select(c => c.ToString(new System.Globalization.CultureInfo("en-GB")).ToUpper()).ToArray();
                                 //populate depends on
@@ -51,7 +51,7 @@ namespace Exercise.ProcessHandlers
                             }
                             if (!tempFields.Contains(name))
                             {
-                                var field = new WindsorExercise.Field { Name = name, DependsOn = new string[0] };
+                                var field = new Field { Name = name, DependsOn = new string[0] };
                                 tempFields.Add(name);
                                 fields.Add(field);
                             }

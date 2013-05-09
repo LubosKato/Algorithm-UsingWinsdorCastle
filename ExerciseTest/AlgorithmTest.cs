@@ -18,7 +18,7 @@ namespace ExerciseTest
         [Test(Description = "Testing algorithm")]
         public void TestAlgorithm()
         {
-            IAlgorithm algorithm = new Algorithm();
+            IAlgorithm algorithm = new AlgorithmNew();
             List<string> result = algorithm.ProcessInput(_setupTool.Field);
             Assert.IsNotNull(result);
             Assert.AreEqual(6, result.Count);

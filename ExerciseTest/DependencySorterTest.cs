@@ -26,7 +26,7 @@ namespace ExerciseTest
             IAlgorithm algorithm = _mocks.StrictMock<IAlgorithm>();
             IReadInput input = _mocks.StrictMock<IReadInput>();
             IWriteOutput output = _mocks.StrictMock<IWriteOutput>();
-            var field = new List<WindsorExercise.Field>();
+            var field = new List<Field>();
 
             using (_mocks.Record())
             {
@@ -48,7 +48,7 @@ namespace ExerciseTest
             IAlgorithm algorithm = _mocks.StrictMock<IAlgorithm>();
             IReadInput input = _mocks.StrictMock<IReadInput>();
             IWriteOutput output = _mocks.StrictMock<IWriteOutput>();
-            var field = new List<WindsorExercise.Field>();
+            var field = new List<Field>();
 
             input.Stub(x => x.ReadInputFile(_setupTool.InputFileValid, ref field)).Throw(new FormatException());
             algorithm.Stub(x => x.ProcessInput(_setupTool.Field)).Return(_setupTool.OutputList);
