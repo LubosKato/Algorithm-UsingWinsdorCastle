@@ -9,18 +9,22 @@ namespace Exercise.ProcessHandlers
         public List<string> ProcessInput(List<WindsorExercise.Field> fields)
         {
             var result = new Dictionary<string, string>();
-            foreach (var field in fields)
+            if (fields != null)
             {
-                if (field.DependsOn != null && field.DependsOn.Any())
+                foreach (var field in fields)
                 {
-                    var entryPoint = field.Name;
-                    var dependencies = new List<string>();
-                    var entryPoints = new List<string>();
-                    Recursion(entryPoint, entryPoints, fields, dependencies);
-                    dependencies.Sort();
-                    result.Add(entryPoint, string.Concat(dependencies.ToArray()));
+                    if (field.DependsOn != null && field.DependsOn.Any())
+                    {
+                        var entryPoint = field.Name;
+                        var dependencies = new List<string>();
+                        var entryPoints = new List<string>();
+                        Recursion(entryPoint, entryPoints, fields, dependencies);
+                        dependencies.Sort();
+                        result.Add(entryPoint, string.Concat(dependencies.ToArray()));
+                    }
                 }
             }
+
             return result.Select(line => line.Key + "  " + line.Value).ToList();
         }
 
