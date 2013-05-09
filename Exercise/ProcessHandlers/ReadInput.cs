@@ -59,9 +59,9 @@ namespace Exercise.ProcessHandlers
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                throw;
             }
 
             return true;

@@ -1,6 +1,0 @@
-A  BCEFGH
-B  CEFGH
-C  G
-D  ABCEFGH
-E  FH
-F  H

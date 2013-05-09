@@ -6,7 +6,7 @@ namespace Exercise.ProcessHandlers
 {
     public class Algorithm : IAlgorithm
     {
-        public Dictionary<string, string> ProcessInput(List<WindsorExercise.Field> fields)
+        public List<string> ProcessInput(List<WindsorExercise.Field> fields)
         {
             var result = new Dictionary<string, string>();
             foreach (var field in fields)
@@ -21,7 +21,7 @@ namespace Exercise.ProcessHandlers
                     result.Add(entryPoint, string.Concat(dependencies.ToArray()));
                 }
             }
-            return result;
+            return result.Select(line => line.Key + "  " + line.Value).ToList();
         }
 
         private void Recursion(string entryPoint, List<string> entryPoints, List<WindsorExercise.Field> fields, List<string> dependencies)

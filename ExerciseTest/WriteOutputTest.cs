@@ -15,19 +15,19 @@ namespace ExerciseTest
         }
 
         [Test(Description = "Testing valid output file path")]
-        public void Test_OutputFile_Valid()
+        public void TestOutputFileValid()
         {
             IWriteOutput output = new WriteOutput();
-            bool passed = output.WriteOutputFile(_setupTool.outputFile_Valid, _setupTool.outputList);
+            bool passed = output.WriteOutputFile(_setupTool.OutputFileValid, _setupTool.OutputList);
             Assert.IsTrue(passed);
         }
 
         [Test(Description = "Testing write ivalid format output file")]
         [ExpectedException(typeof(ArgumentException))]
-        public void Test_OutputFile_Invalid()
+        public void TestOutputFileInvalid()
         {
             IWriteOutput output = new WriteOutput();
-            output.WriteOutputFile(_setupTool.outputFile_InValid, _setupTool.outputList);
+            output.WriteOutputFile(_setupTool.OutputFileInValid, _setupTool.OutputList);
         }
     }
 }

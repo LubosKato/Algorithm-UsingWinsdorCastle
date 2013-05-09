@@ -18,11 +18,11 @@ namespace ExerciseTest
         }
 
         [Test(Description = "Testing input with empty file")]
-        public void Test_EmptyFile()
+        public void TestEmptyFile()
         {
             var field = new List<WindsorExercise.Field>();
             IReadInput readInput = new ReadInput();
-            bool passed = readInput.ReadInputFile(_setupTool.inputFile_Empty, ref field);
+            bool passed = readInput.ReadInputFile(_setupTool.InputFileEmpty, ref field);
             Assert.IsTrue(passed);
             Assert.IsNotNull(field);
             Assert.AreEqual(0, field.Count);
@@ -30,19 +30,19 @@ namespace ExerciseTest
 
         [Test(Description = "Testing invalid data")]
         [ExpectedException(typeof(FormatException))]
-        public void Test_with_Invalid_Data()
+        public void TestWithInvalidData()
         {
             var field = new List<WindsorExercise.Field>();
             IReadInput readInput = new ReadInput();
-            readInput.ReadInputFile(_setupTool.inputFile_InValidData, ref field);
+            readInput.ReadInputFile(_setupTool.InputFileInValidData, ref field);
         }
 
         [Test(Description = "Testing valid data")]
-        public void Test_with_Valid_Data()
+        public void TestWithValidData()
         {
             var field = new List<WindsorExercise.Field>();
             IReadInput readInput = new ReadInput();
-            bool passed = readInput.ReadInputFile(_setupTool.inputFile_Valid, ref field);
+            bool passed = readInput.ReadInputFile(_setupTool.InputFileValid, ref field);
             Assert.IsTrue(passed);
             Assert.IsNotNull(field);
             Assert.AreEqual(8, field.Count);

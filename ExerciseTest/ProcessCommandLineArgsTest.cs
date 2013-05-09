@@ -15,19 +15,19 @@ namespace ExerciseTest
         }
 
         [Test(Description = "Testing valid entries to command line")]
-        public void Test_commandLine_Valid()
+        public void TestCommandLineValid()
         {
             var cmd = _setupTool.SetUpValidCommand();
-            ProcessCommandLineArgs args = new ProcessCommandLineArgs(new DependencySorter(new Algorithm(), new ReadInput(), new WriteOutput()));
+            var args = new ProcessCommandLineArgs(new DependencySorter(new ReadInput(), new Algorithm(), new WriteOutput()));
             bool result = args.ProcessArgs(cmd);
             Assert.IsTrue(result);
         }
 
         [Test(Description = "Testing invalid entries to command line")]
-        public void Test_commandLine_InValid()
+        public void TestCommandLineInValid()
         {
             var cmd = _setupTool.SetUpInValidCommand();
-            ProcessCommandLineArgs args = new ProcessCommandLineArgs(new DependencySorter(new Algorithm(), new ReadInput(), new WriteOutput()));
+            var args = new ProcessCommandLineArgs(new DependencySorter(new ReadInput(), new Algorithm(), new WriteOutput()));
             bool result = args.ProcessArgs(cmd);
             Assert.IsFalse(result);
         }

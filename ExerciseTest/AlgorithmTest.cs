@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Exercise;
 using Exercise.ProcessHandlers;
 using Exercise.ProcessHandlersInterfaces;
 using NUnit.Framework;
@@ -17,15 +16,14 @@ namespace ExerciseTest
         }
 
         [Test(Description = "Testing algorithm")]
-        public void Test_Algorithm()
+        public void TestAlgorithm()
         {
-            var field = new List<WindsorExercise.Field>();
             IAlgorithm algorithm = new Algorithm();
-            Dictionary<string, string> result = algorithm.ProcessInput(_setupTool.field);
+            List<string> result = algorithm.ProcessInput(_setupTool.Field);
             Assert.IsNotNull(result);
             Assert.AreEqual(6, result.Count);
-            Assert.AreEqual(result["A"], _setupTool.processedInput["A"]);
-            Assert.AreEqual(result["D"], _setupTool.processedInput["D"]);
+            Assert.AreEqual(result[0], _setupTool.OutputList[0]);
+            Assert.AreEqual(result[1], _setupTool.OutputList[1]);
         }
     }
 }
