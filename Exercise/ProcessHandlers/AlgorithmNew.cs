@@ -33,10 +33,10 @@ namespace Exercise.ProcessHandlers
         private void Recursion(string entryPoint, List<string> entryPointsToCheck, List<string> dependencies)
         {
             entryPointsToCheck.Remove(entryPoint);
-            string[] temp = (from field in _fields where entryPoint == field.Name select field.DependsOn).FirstOrDefault();
-            if (temp != null && temp.Any())
+            string[] dependenciesTemp = (from field in _fields where entryPoint == field.Name select field.DependsOn).FirstOrDefault();
+            if (dependenciesTemp != null && dependenciesTemp.Any())
             {
-                foreach (var dependency in temp)
+                foreach (var dependency in dependenciesTemp)
                 {
                     if (!dependencies.Contains(dependency))
                     {
@@ -48,7 +48,7 @@ namespace Exercise.ProcessHandlers
                         entryPointsToCheck.Remove(dependency);
                     }
                 }
-                Recursion(temp[0], entryPointsToCheck, dependencies);
+                Recursion(dependenciesTemp[0], entryPointsToCheck, dependencies);
             }
             else
             {
