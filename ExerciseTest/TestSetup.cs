@@ -36,7 +36,7 @@ namespace ExerciseTest
             Field = new List<Field>
                         {
                             new Field {Name = "A", DependsOn = new[] {"B", "C"}},
-                            new Field {Name = "B", DependsOn = new[] {"C", "E"}},
+                            new Field {Name = "B", DependsOn = new[] {"E", "C"}},
                             new Field {Name = "C", DependsOn = new[] {"G"}},
                             new Field {Name = "D", DependsOn = new[] {"A", "F"}},
                             new Field {Name = "E", DependsOn = new[] {"F"}},

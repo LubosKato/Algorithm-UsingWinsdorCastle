@@ -43,10 +43,6 @@ namespace Exercise.ProcessHandlers
                         dependencies.Add(dependency);
                         entryPointsToCheck.Add(dependency);
                     }
-                    else
-                    {
-                        entryPointsToCheck.Remove(dependency);
-                    }
                 }
                 Recursion(dependenciesTemp[0], entryPointsToCheck, dependencies);
             }
