@@ -27,11 +27,5 @@ namespace Exercise.ProcessHandlers
             _watch.Reset();
             return result;
         }
-
-
-        public List<string> ProcessInput()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
